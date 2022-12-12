@@ -16,4 +16,17 @@ function insert($save=false)
    }
 }
 
+function logincheck($logindata)
+{
+$data=$this->db->where('email',$logindata['email'])->where('password',$logindata['password'])->get($this->table)->row();
+if(!empty($data))
+{
+    return $data;
+}
+else
+{
+    return 'false';
+}
+}
+
 }
