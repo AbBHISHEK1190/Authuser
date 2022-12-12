@@ -5,10 +5,15 @@ class Home_model extends CI_Model
     {
         parent::__construct();
         $this->load->database();
+        $this->table='users';
     }
-function abc()
+function insert($save=false)
 {
-    return 'abhishek';
+   if(!empty($save))
+   {
+    $save['created']=time();
+    $this->db->insert($this->table,$save);
+   }
 }
 
 }

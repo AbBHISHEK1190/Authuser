@@ -13,7 +13,9 @@
   <body>
     
     <div class="container">
-    <h1>Signup form</h1>
+    <h1>Signup form <?php echo validation_errors(); ?>  
+</h1>
+
     <form  id="basic-form" action="<?=base_url();?>" method=post>
     <div class="form-group">
     <label for="exampleInputPassword1">Username</label>
