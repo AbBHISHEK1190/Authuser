@@ -1,7 +1,6 @@
 <?php
 class Home_lib{
 
-    // public $ci;
     function __construct()
     {
         $this->CI=& get_instance();
@@ -16,9 +15,5 @@ class Home_lib{
 
         return call_user_func_array([$this->CI->Home_model, $method], $arguments);
     }
-    public function xyz()
-    {
-
-        return 'jsjsjjsjs';
-    }
+   
 }

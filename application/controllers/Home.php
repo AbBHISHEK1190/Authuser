@@ -10,7 +10,10 @@ Class Home extends CI_Controller{
     }
     public function index()
     {
-
+       $post= $this->input->post();
+    //    pr($post,1);
+    
+     $this->load->view('signup');
     }
     function view()
     {
