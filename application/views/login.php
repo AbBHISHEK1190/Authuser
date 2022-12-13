@@ -35,6 +35,9 @@
   </div> -->
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<br>
+<a href="<?php echo base_url('/')?>"><i class="fa fa-desktop"></i><button class="btn btn-primary">Signup</button></a>
+
 </div>
 
     <!-- Optional JavaScript -->
