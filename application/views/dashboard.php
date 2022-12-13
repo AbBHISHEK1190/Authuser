@@ -24,7 +24,7 @@
 <div id="sidebar-nav">
 <ul>
 <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-<li><a href="<?php echo base_url('home/logout')?>"><i class="fa fa-desktop"></i>Logout</a></li>
+<li><a href="<?php echo base_url('user/logout')?>"><i class="fa fa-desktop"></i>Logout</a></li>
 <!-- <li><a href="#"><i class="fa fa-usd"></i> Ecommerce</a></li>
 <li><a href="#"><i class="fa fa-pencil-square-o"></i> My Blog</a></li>
 <li><a href="#"><i class="fa fa-sitemap"></i> SEO Tools</a></li>

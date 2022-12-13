@@ -1,11 +1,11 @@
 <?php
-Class Home extends CI_Controller{
+Class User extends CI_Controller{
 
     function __construct()
 
     {
         parent::__construct();
-        $this->load->library('Home_lib');
+        $this->load->library('User_lib');
         $this->load->library('session');
 
 
@@ -43,7 +43,7 @@ Class Home extends CI_Controller{
                 "email"=>$this->input->post('email'),
                 "password"=>password_hash($this->input->post('password'), PASSWORD_BCRYPT),
                 );
-         $indertid=$this->home_lib->insert($dataarray);
+         $indertid=$this->user_lib->insert($dataarray);
          if(!empty($indertid))
          {
             $this->loginwithsignup($dataarray['email'],$this->input->post('password'));
@@ -59,19 +59,19 @@ Class Home extends CI_Controller{
     {
  
 if(empty($email) || empty($password))
-return redirect('home/login');
+return redirect('user/login');
 
 $dataarray=array(
     "email"=>$email,
     "password"=>$password,
     );
-$data= $this->home_lib->logincheck($dataarray);
+$data= $this->user_lib->logincheck($dataarray);
 if($data !='false')
 {
 $this->session->set_userdata('auth',$data);
 $this->session->set_flashdata('msg','Successfully Log in');
 
-redirect(base_url('home/dashboard'));
+redirect(base_url('user/dashboard'));
 
 }
 
@@ -101,13 +101,13 @@ redirect(base_url('home/dashboard'));
                 "email"=>$this->input->post('email'),
                 "password"=>$this->input->post('password'),
                 );
-        $data= $this->home_lib->logincheck($dataarray);
+        $data= $this->user_lib->logincheck($dataarray);
 if($data !='false')
 {
     $this->session->set_userdata('auth',$data);
     $this->session->set_flashdata('msg','Successfully Log in');
 
-    redirect(base_url('home/dashboard'));
+    redirect(base_url('user/dashboard'));
 
 }
 else
@@ -124,7 +124,7 @@ else
     {
         if(!$this->session->userdata('auth'))
         {
-            redirect(base_url('home/login'));
+            redirect(base_url('user/login'));
         }
         $this->load->view('dashboard');
 
@@ -134,7 +134,7 @@ else
     {
        
         $this->session->unset_userdata('auth');
-        redirect(base_url('home/login'));
+        redirect(base_url('user/login'));
 
     } 
 }
