@@ -14,6 +14,7 @@
     
     <div class="container">
     <h1>Login form <?php echo validation_errors(); ?>  
+    <h2 class="text-danger"><?=$this->session->flashdata('msg'); ?></h2> 
 </h1>
 
     <form  id="basic-form" action="<?=current_url();?>" method=post>

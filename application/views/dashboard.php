@@ -13,7 +13,8 @@
   <body>
     
     <div class="container">
-    <h1>Welcome <?=$this->session->userdata('auth')->username; ?> 
+    <h1 class="text-danger">Welcome <?=$this->session->userdata('auth')->username; ?> 
+    <h2><?=$this->session->flashdata('msg'); ?></h2> 
 </h1>
 
    

@@ -41,14 +41,42 @@ Class Home extends CI_Controller{
             $dataarray=array(
                 "username"=>$this->input->post('username'),
                 "email"=>$this->input->post('email'),
-                "password"=>$this->input->post('password'),
+                "password"=>password_hash($this->input->post('password'), PASSWORD_BCRYPT),
                 );
-         $this->home_lib->insert($dataarray);
+         $indertid=$this->home_lib->insert($dataarray);
+         if(!empty($indertid))
+         {
+            $this->loginwithsignup($dataarray['email'],$this->input->post('password'));
+         }
         }
 
    
     
      $this->load->view('signup');
+    }
+
+    function loginwithsignup($email=false,$password=false)
+    {
+ 
+if(empty($email) || empty($password))
+return redirect('home/login');
+
+$dataarray=array(
+    "email"=>$email,
+    "password"=>$password,
+    );
+$data= $this->home_lib->logincheck($dataarray);
+if($data !='false')
+{
+$this->session->set_userdata('auth',$data);
+$this->session->set_flashdata('msg','Successfully Log in');
+
+redirect(base_url('home/dashboard'));
+
+}
+
+
+
     }
     function login()
     {
@@ -77,8 +105,14 @@ Class Home extends CI_Controller{
 if($data !='false')
 {
     $this->session->set_userdata('auth',$data);
+    $this->session->set_flashdata('msg','Successfully Log in');
+
     redirect(base_url('home/dashboard'));
 
+}
+else
+{
+    $this->session->set_flashdata('msg','Email or password is wrong');
 }
     }
 
