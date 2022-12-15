@@ -89,4 +89,19 @@ pr($array);
         echo "<pre>";
         print_r($arrCount);
     }
+
+    function stringrevrese()
+    {
+        $string = "ABHISHEK";  
+     
+     
+     for($i=strlen($string);$i>=0;$i--)
+     {
+
+        echo !empty($string[$i])?$string[$i]:'';
+     }
+
+
+
+    }
 }
