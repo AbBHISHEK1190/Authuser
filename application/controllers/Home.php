@@ -104,4 +104,31 @@ pr($array);
 
 
     }
+
+    function secondlargesarrayval()
+    {
+        $array=array(200,250,500,499,450);
+        $first=0;
+        $second=0;
+        foreach($array as $arr)
+        {
+            if(empty($first))
+            {
+                $second=$arr;
+            }
+            if($arr>$first)
+            {
+                $first=$arr;
+
+            }
+            if($arr<$first && $arr>$second)
+            {
+                $second=$arr;
+
+            }
+             
+        }
+// echo $first;
+echo $second;
+    }
 }
