@@ -136,4 +136,43 @@ class Logicalprograms extends CI_Controller
        
        
     }
+
+    function palindrone()
+    {
+
+        
+        // $numstore=$num;
+
+        // $sum=0;
+        $array=array();
+        for($i=1;$i<=1000;$i++)
+        {
+            $num=$i;
+
+            $numstore=$num;
+            $reminder=0;
+
+            while($numstore!=0)
+            {
+
+                $rem=$numstore%10;
+                $reminder=$reminder*10+$rem;
+                $numstore=floor($numstore/10);  
+
+            }
+            
+            if($num==$reminder)
+            {
+                
+                echo "$num Yes it is an Palindrome number".'<br>'; 
+            }
+            else
+            {
+                
+                echo "$num No".'<br>'; 
+
+            }
+        }
+        
+    }
 }
