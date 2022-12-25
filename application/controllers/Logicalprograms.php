@@ -199,4 +199,58 @@ class Logicalprograms extends CI_Controller
     }
     
     }
+
+    function reversenumber()
+    {
+ 
+        $num=8716151;
+        $revnum=0;
+        while($num>0)
+        {
+     $rem=$num%10;
+    $revnum=($revnum*10)+$rem;
+    $num=floor($num/10);
+
+        }
+        echo 'Revesre number is: '.$revnum;
+    }
+
+    function reversestring()
+    {
+        $string = "Abhishek";  
+        for($i=strlen($string);$i>=0;$i--)
+        {
+            echo !empty($string[$i])?strtoupper($string[$i]):'';
+        }
+
+    }
+
+    function swapnum()
+    {
+        $a=10;
+        $b=20;
+        echo 'Before swaping a '. $a .' Before swaping b '. $b; 
+        $third=$a;
+        $a=$b;
+        $b=$third;
+        echo '<br>'.'After swaping a '. $a .' After swaping b '. $b; 
+
+
+    }
+
+    function swapwithoutthirdvariable()
+    {
+        
+        $a=10;
+        $b=20;
+        echo 'Before swaping a '. $a .' Before swaping b '. $b; 
+
+        $b=$a+$b;
+        $a=$b-$a;
+        $b=$b-$a;
+        echo '<br>'.'After swaping a '. $a .' After swaping b '. $b; 
+
+    
+
+    }
 }
