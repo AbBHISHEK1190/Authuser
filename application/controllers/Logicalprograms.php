@@ -175,4 +175,28 @@ class Logicalprograms extends CI_Controller
         }
         
     }
+
+    function fibonnaci()
+    {
+    //   example=  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233
+
+    $num=0;
+    $fibnum1=0;
+    $fibnum2=1;
+
+    $sum=array();
+    while($num<10)
+    {
+
+        $fibnum=$fibnum1+$fibnum2;
+        $fibnum1=$fibnum2;  
+        $fibnum2=$fibnum;
+
+      $num=  $num+1;
+
+
+      echo $fibnum.'<br>';
+    }
+    
+    }
 }
