@@ -20,6 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->library('user_lib');
+
+		$resut['resut']=$this->user_lib->alldata();
+// echo '<pre>';print_r($resut);die;
+		$this->load->view('ajaxview',$resut);
 	}
 }

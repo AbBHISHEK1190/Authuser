@@ -31,4 +31,9 @@ else
 }
 }
 
+function alldata()
+{
+ return   $this->db->get($this->table)->result();
+}
+
 }
