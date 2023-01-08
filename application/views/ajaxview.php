@@ -17,7 +17,7 @@ table, th, td {
     <th>Username</th>
   </tr>
   <?php foreach($resut as $key=>$data){?>
-  <tr id="myTable">
+  <tr>
     <td><?php echo $data->username?></td>
     <td><?php echo $data->email?></td>    
   </tr>
