@@ -29,6 +29,10 @@ table, th, td {
 <script>
     
         $( window ).on("load", function(){
+        
+
+            $("table").css("background-color","yellow");
+            $("th").css("background-color","brown");
             $( "tr:even" ).css( "background-color", "#bbf" );
             $( "tr:odd" ).css( "background-color", "red" );
 
